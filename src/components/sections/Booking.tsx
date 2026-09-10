@@ -13,7 +13,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import { useToast } from "@/hooks/use-toast";
 import { siteData } from "@/data/siteData";
-import { Calendar as CalendarIcon, Clock, CircleCheck as CheckCircle2, ChevronLeft, ChevronRight, CalendarDays, Zap, Package, User, Phone, Mail, Monitor } from "lucide-react";
+import { Calendar as CalendarIcon, Clock, CircleCheck as CheckCircle2, ChevronLeft, ChevronRight, CalendarDays, Zap, Package, User, Phone, Mail, Tablet } from "lucide-react";
 import { format } from "date-fns";
 import { ru } from "date-fns/locale";
 
@@ -33,7 +33,7 @@ const Booking = () => {
       return;
     }
     if (step === 2 && (!monitorType || !urgency)) {
-      toast({ title: "Заполните данные", description: "Укажите тип монитора и срочность ремонта.", variant: "destructive" });
+      toast({ title: "Заполните данные", description: "Укажите модель планшета и срочность ремонта.", variant: "destructive" });
       return;
     }
     setStep((s) => Math.min(s + 1, 3));
@@ -147,12 +147,12 @@ const Booking = () => {
               <div className="animate-fade-in space-y-6">
                 <div className="space-y-3">
                   <Label className="flex items-center gap-2 text-base font-semibold">
-                    <Monitor className="h-4 w-4 text-primary" />
-                    Тип матрицы монитора
+                    <Tablet className="h-4 w-4 text-primary" />
+                    Модель планшета
                   </Label>
                   <Select value={monitorType} onValueChange={setMonitorType}>
                     <SelectTrigger>
-                      <SelectValue placeholder="Выберите тип матрицы" />
+                      <SelectValue placeholder="Выберите модель или бренд" />
                     </SelectTrigger>
                     <SelectContent>
                       {siteData.booking.monitorTypes.map((type) => (
@@ -224,21 +224,21 @@ const Booking = () => {
                 <div className="space-y-2">
                   <Label htmlFor="bk-model" className="flex items-center gap-1.5">
                     <Package className="h-3.5 w-3.5 text-primary" />
-                    Модель монитора
+                    Модель планшета
                   </Label>
-                  <Input id="bk-model" placeholder="Например: Samsung Odyssey G7" />
+                  <Input id="bk-model" placeholder="Например: Apple iPad Air или Samsung Galaxy Tab" />
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="bk-desc">Опишите проблему</Label>
-                  <Input id="bk-desc" placeholder="Не включается, полосы на экране и т.д." />
+                  <Input id="bk-desc" placeholder="Разбит экран, не заряжается и т.д." />
                 </div>
 
                 <div className="rounded-lg bg-primary/5 p-4 space-y-1.5 text-sm">
                   <p className="font-semibold text-primary">Детали записи:</p>
                   <p>Дата: {date ? format(date, "d MMMM yyyy", { locale: ru }) : "—"}</p>
                   <p>Время: {timeSlot || "—"}</p>
-                  <p>Тип матрицы: {monitorType || "—"}</p>
+                  <p>Модель планшета: {monitorType || "—"}</p>
                   <p>Срочность: {urgency || "—"}</p>
                 </div>
 

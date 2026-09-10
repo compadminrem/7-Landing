@@ -60,7 +60,7 @@ const Hero = () => {
             <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl">
               <img
                 src={siteData.hero.image}
-                alt="Ремонт мониторов"
+                alt="Ремонт планшетов"
                 className="h-[420px] w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" />
@@ -73,7 +73,7 @@ const Hero = () => {
                   </div>
                   <div>
                     <p className="text-2xl font-bold">10K+</p>
-                    <p className="text-xs text-muted-foreground">отремонтировано</p>
+                    <p className="text-xs text-muted-foreground">восстановлено</p>
                   </div>
                 </div>
               </CardContent>

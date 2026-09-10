@@ -2,10 +2,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { siteData } from "@/data/siteData";
-import { Monitor, Lightbulb, Zap, Cpu, Cable, Sparkles, ArrowRight, CircleCheck as CheckCircle2 } from "lucide-react";
+import { Tablet, Cable, BatteryCharging, Cpu, Settings2, Droplets, ArrowRight, CircleCheck as CheckCircle2 } from "lucide-react";
 
-const iconMap: Record<string, typeof Monitor> = {
-  Monitor, Lightbulb, Zap, Cpu, Cable, Sparkles,
+const iconMap: Record<string, typeof Tablet> = {
+  Tablet, Cable, BatteryCharging, Cpu, Settings2, Droplets,
 };
 
 const Services = () => {
@@ -15,16 +15,16 @@ const Services = () => {
         <div className="mx-auto mb-12 max-w-2xl text-center">
           <Badge variant="secondary" className="mb-3 border-primary/20 bg-primary/5 text-primary">Услуги</Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-balance">
-            Полный спектр услуг по ремонту мониторов
+            Полный спектр услуг по ремонту планшетов
           </h2>
           <p className="mt-3 text-muted-foreground text-balance">
-            От замены матрицы до сложного ремонта электроники — решаем любые проблемы с вашим монитором
+            От замены стекла и дисплея до сложного ремонта электроники — решаем любые проблемы с вашим планшетом
           </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {siteData.services.map((service, i) => {
-            const Icon = iconMap[service.icon] || Monitor;
+            const Icon = iconMap[service.icon] || Tablet;
             return (
               <Card
                 key={service.title}

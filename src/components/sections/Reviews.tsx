@@ -133,7 +133,7 @@ const Reviews = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label>Модель монитора</Label>
+                    <Label>Модель планшета</Label>
                     <Select>
                       <SelectTrigger>
                         <SelectValue placeholder="Выберите бренд" />

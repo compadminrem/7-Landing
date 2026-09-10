@@ -54,7 +54,7 @@ const Footer = () => {
               <span className="text-lg font-bold">{siteData.brand.name}</span>
             </a>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-              {siteData.brand.tagline}. Ремонтируем мониторы всех брендов с гарантией до 24 месяцев.
+              {siteData.brand.tagline}. Ремонтируем планшеты всех брендов с гарантией до 24 месяцев.
             </p>
             <div className="mt-6 space-y-2.5 text-sm">
               <a href={`tel:${siteData.brand.phone.replace(/[^+\d]/g, "")}`} className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary">
